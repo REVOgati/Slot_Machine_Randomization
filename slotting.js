@@ -24,16 +24,58 @@ const prompt = require("prompt-sync")(); // Used to initiate prompt connecting t
 //2nd way to make function(we use it) - 
 
 const deposit = () => {
-    const depositAmount = prompt("Enter a deposit Amount: ")
-    const numberDepositAmount = parseFloat(depositAmount); - // To convert input, StringNumeric to a floating point number : gives Nan for non- numbers.
-
-    // Incase input is not a number or is <=0 - console.log rollsback input and user has to try again
-    if (isNaN(numberDepositAmount) || numberDepositAmount <= 0) {
-        console.log("Invalid Deposit Amount, try again");
+    while (true) {
+        const deposit = prompt("Enter a deposit Amount: ");
+        const depositAmount = parseFloat(deposit);
+        // Incase input is not a number or is <=0 - console.log rollsback input and user has to try again
+        if (isNaN(parseFloat(depositAmount)) || parseFloat(depositAmount) <= 0) {
+            console.log("Invalid Deposit Amount, try again");
+        } else {
+            return depositAmount;
+        }
     }
-    
+
 };
 
-deposit();
+// Step 2 : Get Number of Lines 
+const getNumberofLines = () =>{
+    while (true) {
+        const NumberofLinesInput = parseFloat(prompt("Enter number of Lines(1,2,or 3): "));
 
-// To run, Use "node filename.js" at terminal, and prompt will be initiated for deposit.
+        if(isNaN(NumberofLinesInput) || NumberofLinesInput <= 0 || NumberofLinesInput >3) {
+            console.log("Invalid Number of Lines input, try again");
+        }
+        else{
+            return NumberofLinesInput;
+        }
+    }
+}
+
+//3. Collect a bet amount
+
+const getBetAmount = (balance) => {
+    while (true){
+        const bet = prompt("Enter amount to bet with: ");
+        const betAmount = parseFloat(bet);
+
+        if(isNaN(betAmount) || betAmount <= 0 || betAmount > balance){
+            console.log("Invalid Bet Amount, try again.");
+        }else {
+            return betAmount;
+        }
+    }
+}
+
+// Initializing the functions
+
+let balance = deposit();
+const NumberofLines = getNumberofLines();
+const bet = getBetAmount();
+
+// Printing the inputs 
+
+console.log("Deposit Amount: ",depositAmount)
+console.log("Number of Lines: ",NumberofLines)
+console.log("Bet Amount: ", bet)
+
+// To run, Use "node filename.js" at terminal, and prompt will be initiated for whatever function.
