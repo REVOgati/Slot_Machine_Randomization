@@ -1,6 +1,6 @@
 # SlotMachineRandomization
 
-##Project Description
+## Project Description
 Project involves creating a hypothetical system for generating random arrangements for a slot machine used in Gambling. 
 
 There will be 3 columns each with the characters A, B and C.
@@ -13,4 +13,11 @@ We can have different sets where a player chooses to either bet on Uniformity of
 
 The more the number of sets, the higher the bet amount.
 
-Step 1 : Segment for depositing Money - Stake
+## Steps
+Step 1 : - function for depositing Money - Stake
+Step 2 :-  Determine number of lines/rows to bet
+Step 3 : - Collect a bet amount
+Step 4 : - Spin slot machine
+Step 5 : - Check if user won or lost
+Step 6 : - Give user their wins if they won
+Step 7 : - User plays again or quits
