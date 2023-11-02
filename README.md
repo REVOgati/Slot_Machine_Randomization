@@ -15,7 +15,7 @@ The more the number of sets, the higher the bet amount.
 
 ## Steps
 Step 1 : - function for depositing Money - Stake
-Step 2 :-  Determine number of lines/rows to bet
+Step 2 : -  Determine number of lines/rows to bet
 Step 3 : - Collect a bet amount
 Step 4 : - Spin slot machine
 Step 5 : - Check if user won or lost
